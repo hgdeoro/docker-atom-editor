@@ -37,11 +37,11 @@ RUN apt-get update && \
 
 ENV LANG en_US.utf8
 
-ARG ARG_ATOM_VERSION
+ARG ATOM_VERSION
 
 # https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c#gistcomment-2574561
-RUN if [ -n "${ARG_ATOM_VERSION}" ] ; then \
-        curl -L https://github.com/atom/atom/releases/download/${ARG_ATOM_VERSION}/atom-amd64.deb > /tmp/atom.deb && \
+RUN if [ -n "${ATOM_VERSION}" ] ; then \
+        curl -L https://github.com/atom/atom/releases/download/${ATOM_VERSION}/atom-amd64.deb > /tmp/atom.deb && \
         dpkg -i /tmp/atom.deb && \
         rm /tmp/atom.deb \
     ; else \

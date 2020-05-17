@@ -17,7 +17,7 @@ help:
 	@echo "	$$ make build"
 	@echo ""
 	@echo "or with a specific version:"
-	@echo "	$$ make build ARG_ATOM_VERSION=v1.46.0"
+	@echo "	$$ make build ATOM_VERSION=v1.46.0"
 	@echo ""
 	@echo "To run Atom on container and mount paths specified by MOUNT_DIRS:"
 	@echo "  $$ make run MOUNT_DIRS=\"\$$HOME/projects /srv/projects\""
@@ -25,7 +25,7 @@ help:
 
 build:
 	docker build . -t $(DOCKER_TAG) \
-		--build-arg ARG_ATOM_VERSION=$(ARG_ATOM_VERSION) \
+		--build-arg ATOM_VERSION=$(ATOM_VERSION) \
 		--build-arg ATOM_USER_NAME=$(ATOM_USER_NAME) \
 		--build-arg ATOM_USER_ID=$(ATOM_USER_ID) \
 		--build-arg ATOM_GROUP_NAME=$(ATOM_GROUP_NAME) \
